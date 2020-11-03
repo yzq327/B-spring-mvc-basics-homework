@@ -22,7 +22,7 @@ public class User {
     @Pattern(regexp = "^\\w+$", message = "用户名只能由字母、数字或下划线组成")
     private String username;
     @NotBlank(message = "color must not be blank")
-    @Length(min=5, max=12, message="用户名长度必须在5-12之间")
+    @Length(min=5, max=12, message="密码长度必须在5-12之间")
     private String password;
     @Email
     private String email;

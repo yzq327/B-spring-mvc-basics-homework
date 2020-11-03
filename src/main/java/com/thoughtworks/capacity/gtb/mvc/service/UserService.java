@@ -20,8 +20,8 @@ public class UserService {
         userMap.put(user.getId(), user);
     }
 
-    public User getUser(Map<String,String> allParams) {
-        User user = userMap.get(allParams);
+    public User getUser(String username, String password) {
+        User user = userMap.get(username);
         if(user == null) {
             throw new UserNotFoundException (404, "user not found");
         }
