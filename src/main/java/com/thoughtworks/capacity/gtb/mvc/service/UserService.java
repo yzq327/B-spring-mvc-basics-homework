@@ -23,7 +23,7 @@ public class UserService {
     public User getUser(Map<String,String> allParams) {
         User user = userMap.get(allParams);
         if(user == null) {
-            throw new UserNotFoundException ("user not found");
+            throw new UserNotFoundException (404, "user not found");
         }
         return user;
     }

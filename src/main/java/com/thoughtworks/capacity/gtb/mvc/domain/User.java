@@ -27,7 +27,11 @@ public class User {
     @Email
     private String email;
 
-    public User(Integer i, String yangzhengqing, String s, String s1) {
+    public User(Integer id, String username, String password, String email) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
     }
 
     public Integer getId() {
