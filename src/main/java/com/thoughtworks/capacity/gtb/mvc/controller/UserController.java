@@ -8,6 +8,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Map;
 
 @RestController
 @Validated
@@ -22,7 +23,9 @@ public class UserController {
     public void createUser(@RequestBody @Valid User user) {
         userService.createUser(user);
     }
-//
-//    @GetMapping()
-//    public
+
+    @GetMapping(value = "/login")
+    public User getUser(@RequestParam Map<String,String> allParams) {
+        return userService.getUser(allParams);
+    }
 }

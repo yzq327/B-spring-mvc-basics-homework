@@ -1,6 +1,7 @@
 package com.thoughtworks.capacity.gtb.mvc.service;
 
 import com.thoughtworks.capacity.gtb.mvc.domain.User;
+import com.thoughtworks.capacity.gtb.mvc.exception.UserNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -17,5 +18,13 @@ public class UserService {
 
     public void createUser(User user) {
         userMap.put(user.getId(), user);
+    }
+
+    public User getUser(Map<String,String> allParams) {
+        User user = userMap.get(allParams);
+        if(user == null) {
+            throw new UserNotFoundException ("user not found");
+        }
+        return user;
     }
 }
