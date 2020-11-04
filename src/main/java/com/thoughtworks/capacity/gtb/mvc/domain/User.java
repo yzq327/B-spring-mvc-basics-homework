@@ -12,7 +12,7 @@ import javax.validation.constraints.Pattern;
 
 @Data
 @NoArgsConstructor
-//@AllArgsConstructor
+@AllArgsConstructor
 public class User {
 
     @NotNull(message = "id must not be null")
@@ -27,14 +27,4 @@ public class User {
     @Email
     private String email;
 
-    public User(Integer id, String username, String password, String email) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.email = email;
-    }
-
-    public Integer getId() {
-        return id;
-    }
 }
