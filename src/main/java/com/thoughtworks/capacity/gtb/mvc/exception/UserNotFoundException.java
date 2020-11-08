@@ -1,8 +1,6 @@
 package com.thoughtworks.capacity.gtb.mvc.exception;
 
-import lombok.Data;
 
-//@Data
 public class UserNotFoundException extends RuntimeException {
 
     private ErrorResult errorResult;
